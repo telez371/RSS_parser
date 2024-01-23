@@ -158,9 +158,9 @@ LOGGING = {
 # # Google Chat Webhook settings
 # GOOGLE_CHAT_WEBHOOK_URL = 'https://chat.googleapis.com/v1/spaces/AAAAz9EUjvA/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=rJ4eZwhwkso0iJ2PD6ur5RIVjtvRbGb38C2CGe9iLCc'
 
-OPENAI_API_KEY = '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'
+OPENAI_API_KEY = 'sk-J0rkgeoHqyyNTaK7gqsmT3B'
 
-FIBERY_API_KEY = 'dde24c81.4e57af79a83bac7c77c187404d435441808'
+FIBERY_API_KEY = 'dde24c81.4e57af79a83bac7c7'
 
 
 LOGOUT_REDIRECT_URL = 'admin_login'
