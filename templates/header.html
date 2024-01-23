@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Manage RSS Feeds</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/header.css' %}" />
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <img src="{% static 'images/full.svg' %}" alt="DjangoHeads Logo" />
+        </div>
+        <nav>
+            <ul>
+                <li><a href="{% url 'manage_rss_feeds' %}">RSS Feeds</a></li>
+                <li><a href="{% url 'add_rss_feed' %}">Add RSS Feed</a></li>
+                <!-- Другие ссылки на ваше усмотрение -->
+            </ul>
+        </nav>
+        <form action="{% url 'logout' %}" method="post" class="logout-form">
+            {% csrf_token %}
+            <button type="submit" class="logout-button">Logout</button>
+        </form>
+    </div>
+    <!-- Другие элементы вашего сайта будут здесь -->
+</body>
+</html>

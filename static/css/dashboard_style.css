@@ -1,0 +1,146 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.marginWrapper{
+    margin-top: 120px;
+}
+
+.wrapper {
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(18px);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    z-index: 0;
+
+}
+
+
+
+.settings-form {
+    margin-bottom: 20px;
+    padding: 50px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.settings-form h2 {
+    margin-bottom: 15px;
+}
+
+.settings-form input[type="text"],
+.settings-form input[type="url"],
+.settings-form textarea,
+.settings-form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.settings-form textarea {
+    resize: vertical;
+}
+
+.settings-form label {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.settings-form button {
+    background-color: #5cb85c;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.button-active {
+  background-color: #28a745; /* Зеленый цвет */
+  color: white;
+}
+
+.save-button:disabled {
+  background-color: #cccccc; /* Серый цвет */
+  color: #666666;
+}
+.save-button {
+    padding: 10px 20px; /* Увеличиваем внутренние отступы */
+    font-size: 16px; /* Увеличиваем размер шрифта */
+    width: 50%; /* Задаём ширину кнопки */
+    margin: 20px auto; /* Отступ сверху и снизу, авто-маржин для центрирования */
+    display: block; /* Делаем кнопку блочным элементом */
+    background-color: #4CAF50; /* Цвет фона */
+    color: white; /* Цвет текста */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.save-button:hover {
+    background-color: #45a049; /* Цвет фона при наведении */
+}
+
+/* Дополнительные стили для центрирования кнопки, если необходимо */
+.centered {
+    text-align: center; /* Центрируем текст */
+}
+
+
+#overlay {
+    display: none; /* Скрыт по умолчанию */
+    position: fixed; /* Фиксированное позиционирование */
+    width: 100%; /* Ширина на весь экран */
+    height: 100%; /* Высота на весь экран */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5); /* Полупрозрачный черный цвет */
+    z-index: 2; /* Убедитесь, что оверлей находится над всеми другими элементами */
+}
+
+/* CSS для того, чтобы серый фон не покрывал кнопку "Сохранить" */
+.save-button {
+    position: relative;
+    z-index: 3;
+}
+
+.button-disabled {
+    background-color: #cccccc; /* Серый цвет для неактивной кнопки */
+    color: #666666;
+    cursor: not-allowed; /* Курсор в виде знака запрета */
+}
+
+.table {
+    width: 100%; /* Full width */
+    border-collapse: collapse; /* No space between table borders */
+    background-color: black; /* Black background for the table */
+    color: white; /* White text color */
+}
+
+.table th, .table td {
+    border: 1px solid white; /* White borders for table cells */
+    padding: 8px; /* Padding for cell content */
+    text-align: left; /* Align text to the left */
+}
+
+/* Styles for input fields */
+.input {
+    background-color: black; /* Black background for inputs */
+    color: white; /* White text color */
+    border: 1px solid white; /* White border for inputs */
+    padding: 10px; /* Padding inside inputs */
+    border-radius: 4px; /* Rounded corners for inputs */
+}

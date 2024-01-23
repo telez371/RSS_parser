@@ -1,0 +1,12 @@
+mutation Test($name: String, $value: Float, $comment: String) {
+  opportunities {
+    createBatch(data: [
+      {name: $name, value: $value}
+    ]) {
+      message
+    }
+    addComment(value: $comment) {
+      message
+    }
+  }
+}

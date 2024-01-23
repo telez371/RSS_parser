@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manage RSS Feeds</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/manage_rss_feeds.css' %}" />
+    <style>
+        body {
+            background-image: url('{% static "images/manage_image.png" %}');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            margin: 0;
+            display: flex;
+        }
+          .rss-feeds-container h1 {
+            color: white;
+            text-align: center;
+            {#margin: 20px 0;#}
+        }
+
+        /* Ваши другие стили... */
+    </style>
+    </style>
+</head>
+<body>
+    {% include 'header.html' %}
+
+    <div class="rss-feeds-container">
+        <h1>Manage RSS Feeds</h1>
+        {% for rss_feed in rss_feeds %}
+            <div class="rss-feed-item {% if rss_feed.is_enabled %}active{% else %}inactive{% endif %}">
+                <span class="rss-feed-name">{{ rss_feed.name }}</span>
+                {% if rss_feed.is_enabled %}
+                    <span class="working-icon" style="background-image: url({% static 'images/working_icon.png' %});"></span>
+                {% else %}
+                    <span class="sleeping-icon" style="background-image: url({% static 'images/sleeping_icon.png' %});"></span>
+                {% endif %}
+                <form action="{% url 'toggle_rss_feed_status' rss_feed.id %}" method="post">
+                    {% csrf_token %}
+                    <button type="submit" class="toggle-status-button {% if rss_feed.is_enabled %}deactivate{% else %}activate{% endif %}">
+                        {% if rss_feed.is_enabled %}Deactivate{% else %}Activate{% endif %}
+                    </button>
+                </form>
+                <form action="{% url 'delete_rss_feed' rss_feed.id %}" method="post">
+                    {% csrf_token %}
+                    <button type="submit" class="delete-button">Delete</button>
+                </form>
+            </div>
+        {% endfor %}
+    </div>
+
+    {% include 'footer.html' %}
+</body>
+</html>

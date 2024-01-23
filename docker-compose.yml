@@ -1,0 +1,21 @@
+version: '3.8'
+
+
+services:
+  migration:
+    build: .
+    command: python manage.py migrate
+    volumes:
+      - .:/app
+  web:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    depends_on:
+      migration:
+        condition: service_completed_successfully
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+
+

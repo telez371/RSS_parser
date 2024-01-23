@@ -1,0 +1,68 @@
+
+.header {
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(18px);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    color: white;
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    margin-bottom: 50px;
+    z-index: 1;
+
+}
+
+.header .logo {
+    margin-left: 20px;
+}
+
+.header .logo img {
+    height: 50px; /* Или ваш размер */
+}
+
+/* Стили для навигации */
+.header nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    font-family: 'Arial', sans-serif;
+}
+
+.header nav ul li {
+    margin: 0 10px;
+}
+
+.header nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+    transition: color 0.2s;
+}
+
+.header nav ul li a:hover {
+    color: #6f42c1; /* Фиолетовый при наведении */
+}
+
+/* Стили кнопки выхода */
+.logout-form {
+    margin-right: 20px;
+}
+
+.logout-button {
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 15px;
+    padding: 5px 15px;
+    cursor: pointer;
+    color: white;
+}
+
+.logout-button:hover {
+    background-color: white;
+    color: #343a40;
+}
